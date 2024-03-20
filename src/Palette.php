@@ -60,9 +60,6 @@ class Palette implements \Countable, \IteratorAggregate
      */
     public static function fromFilename($filename, $backgroundColor = null)
     {
-        if (!is_readable($filename)) {
-            throw new \InvalidArgumentException('Filename must be a valid path and should be readable');
-        }
 
         return self::fromContents(file_get_contents($filename), $backgroundColor);
     }
